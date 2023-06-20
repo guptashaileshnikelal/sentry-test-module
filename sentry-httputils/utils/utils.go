@@ -70,7 +70,6 @@ func appendHeaders(optionalParams map[string]interface{}, req *http.Request) *ht
 func DoGetWithoutPort(server, uri string) (response string, statusCode int, err error) {
 	uriPath := fmt.Sprintf("%s%s", server, uri)
 	logger.Infof("uriPath=%s", uriPath)
-	//return DoGet(uriPath, nil)
 
 	return retry.Do(
 		func() (string, int, error) {
